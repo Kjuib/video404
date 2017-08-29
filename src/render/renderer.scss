@@ -1,0 +1,33 @@
+@import "base";
+
+html {
+  font-family: helvetica, Arial, sans-serif;
+  font-size: 20px;
+  color: $color-primary;
+  background: $color-secondary;
+}
+
+.title1 {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 500px;
+  height: 3.5rem;
+
+  font-size: 3.2rem;
+
+  i {
+    font-size: 75%;
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(50% - 1.1rem);
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    width: 400px;
+  }
+}
+

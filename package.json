@@ -1,0 +1,28 @@
+{
+  "name": "video404",
+  "version": "1.0.0",
+  "description": "Organize video files, play in your favorite player, resume, password protect",
+  "scripts": {
+    "build": "npm run sass && electron ./src/main.js",
+    "sass": "node-sass src/render/ -o src/render/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kjuib/video404.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kjuib/video404/issues"
+  },
+  "homepage": "https://github.com/Kjuib/video404#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "electron": "^1.7.5",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "node-sass": "^4.5.3"
+  }
+}

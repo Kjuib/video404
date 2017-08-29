@@ -1,0 +1,33 @@
+$color-primary: rgba(200, 200, 200, 1);
+$color-secondary: rgba(0, 0, 0, 1);
+
+$time-transition-fast: .2s;
+$time-transition: 1s;
+
+@mixin button($color1, $color2) {
+  button {
+    height: 2.5rem;
+    width: 100%;
+    margin: 0 0 20px 0;
+
+    color: $color1;
+    background: transparent;
+    border: solid 5px $color1;
+
+    font-size: 1.5rem;
+    text-align: left;
+    padding-left: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: color $time-transition-fast, background $time-transition-fast;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+      color: $color2;
+      background: $color1;
+    }
+  }
+}

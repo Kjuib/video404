@@ -1,0 +1,60 @@
+@import '../base';
+@import '../../../node_modules/font-awesome/scss/font-awesome';
+
+.settings {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  bottom: 20px;
+
+  font-size: 2rem;
+
+  .title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 100%;
+  }
+  
+  .content {
+    position: absolute;
+    top: 75px;
+    right: 0;
+    bottom: 75px;
+    width: 100%;
+
+    font-size: 1.5rem;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .setDirectories {
+      i {
+        position: absolute;
+        top: 2px;
+        right: 0;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .buttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+
+    @include button($color-secondary, $color-primary);
+
+    button {
+      display: inline-block;
+      width: 25%;
+      padding: 0;
+      text-align: center;
+    }
+  }
+}
