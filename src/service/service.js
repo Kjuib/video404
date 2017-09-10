@@ -10,7 +10,8 @@ module.exports.setMainWindow = (newWindow) => {
 
 runAndReturn(actions.getFiles, require('./getFiles'));
 runAndReturn(actions.playVideo, require('./playVideo'));
-runAndReturn(actions.loadSettings, require('./settings/loadSettings'));
+runAndReturn(actions.loadSettings, require('./settings/settings').load);
+runAndReturn(actions.saveSettings, require('./settings/settings').save);
 
 function runAndReturn(action, func) {
     electron.ipcMain.on(action, (event, data) => {

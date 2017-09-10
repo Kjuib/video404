@@ -13,7 +13,7 @@ const actions = require('../shared/actions');
 require('./clock/clock');
 require('./mainMenu/mainMenu');
 require('./popup/popup');
-require('./settings/settings');
+require('./settings/settingsComp');
 
 electron.ipcRenderer.on(actions.error, (event, message) => {
     console.error(message);
