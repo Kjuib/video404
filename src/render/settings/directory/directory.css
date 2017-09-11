@@ -1,0 +1,12 @@
+.directory {
+  margin: 10px;
+  font-size: 1.2rem; }
+  .directory input {
+    width: 80%;
+    margin-left: 10px;
+    padding: 0 5px;
+    background: transparent;
+    border: 0;
+    border-bottom: solid 1px;
+    outline: 0;
+    font-size: 1.2rem; }

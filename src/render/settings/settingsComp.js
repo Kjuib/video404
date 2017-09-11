@@ -24,6 +24,15 @@ customElements.define('v-settings', class extends HTMLElement {
             popup.hide();
         });
 
+        this.btnAddDirectory = shadowRoot.querySelector('.setDirectories .btnAddDirectory');
+        this.btnAddDirectory.tabIndex = 0;
+        this.btnAddDirectory.addEventListener('click', () => {
+            const newDirectory = document.createElement('v-directory');
+            this.directories.appendChild(newDirectory);
+        });
+
+        this.directories = shadowRoot.querySelector('.setDirectories .directories');
+
         this.loadSettings();
     }
 

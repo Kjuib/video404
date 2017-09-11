@@ -14,6 +14,7 @@ require('./clock/clock');
 require('./mainMenu/mainMenu');
 require('./popup/popup');
 require('./settings/settingsComp');
+require('./settings/directory/directory');
 
 electron.ipcRenderer.on(actions.error, (event, message) => {
     console.error(message);

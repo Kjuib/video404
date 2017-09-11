@@ -31,11 +31,22 @@
     overflow-y: auto;
 
     .setDirectories {
-      i {
+      @include button($color-secondary, $color-primary);
+
+      button {
         position: absolute;
         top: 2px;
         right: 0;
-        cursor: pointer;
+        padding: 0;
+        border: 0;
+        height: 1.5rem;
+        width: 1.5rem;
+        text-align: center;
+        border-radius: 20rem;
+      }
+
+      .directories {
+        padding-left: 30px;
       }
     }
   }
