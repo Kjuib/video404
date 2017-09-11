@@ -2351,16 +2351,16 @@
     overflow-x: hidden;
     overflow-y: auto; }
     .settings .content .setDirectories button {
-      height: 2.5rem;
-      width: 100%;
-      margin: 0 0 20px 0;
+      height: 30px;
+      width: 30px;
+      padding: 0;
       color: black;
       background: transparent;
-      border: solid 5px black;
-      font-size: 1.5rem;
-      text-align: left;
-      padding-left: 15px;
-      border-radius: 5px;
+      border: solid 3px black;
+      border-radius: 20rem;
+      font-size: 20px;
+      text-align: center;
+      line-height: 26px;
       cursor: pointer;
       transition: color 0.2s, background 0.2s; }
       .settings .content .setDirectories button:hover, .settings .content .setDirectories button:focus, .settings .content .setDirectories button:active {
@@ -2372,7 +2372,7 @@
       top: 2px;
       right: 0; }
     .settings .content .setDirectories .directories {
-      padding-left: 30px; }
+      padding-left: 20px; }
   .settings .buttons {
     position: absolute;
     bottom: 0;

@@ -1,5 +1,5 @@
-@import '../base';
 @import '../../../node_modules/font-awesome/scss/font-awesome';
+@import '../base';
 
 .settings {
   position: absolute;
@@ -31,22 +31,16 @@
     overflow-y: auto;
 
     .setDirectories {
-      @include button($color-secondary, $color-primary);
+      @include icon($color-secondary, $color-primary);
 
       button {
         position: absolute;
         top: 2px;
         right: 0;
-        padding: 0;
-        border: 0;
-        height: 1.5rem;
-        width: 1.5rem;
-        text-align: center;
-        border-radius: 20rem;
       }
 
       .directories {
-        padding-left: 30px;
+        padding-left: 20px;
       }
     }
   }

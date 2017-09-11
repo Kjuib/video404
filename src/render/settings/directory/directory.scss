@@ -1,15 +1,24 @@
+@import '../../../../node_modules/font-awesome/scss/font-awesome';
+@import '../../base';
+
 .directory {
-  margin: 10px;
+  display: flex;
   font-size: 1.2rem;
 
+  > * {
+    margin: 10px;
+  }
+
   input {
-    width: 80%;
-    margin-left: 10px;
     padding: 0 5px;
+
+    flex-grow: 1;
     background: transparent;
     border: 0;
     border-bottom: solid 1px;
     outline: 0;
     font-size: 1.2rem;
   }
+
+  @include icon($color-secondary, $color-primary);
 }

@@ -31,3 +31,29 @@ $time-transition: 1s;
     }
   }
 }
+
+@mixin icon($color1, $color2) {
+  button {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+
+    color: $color1;
+    background: transparent;
+    border: solid 3px $color1;
+    border-radius: 20rem;
+    font-size: 20px;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+    transition: color $time-transition-fast, background $time-transition-fast;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+      color: $color2;
+      background: $color1;
+    }
+  }
+}
