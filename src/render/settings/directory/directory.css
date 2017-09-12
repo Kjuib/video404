@@ -2329,10 +2329,38 @@
   clip: auto; }
 
 .directory {
-  display: flex;
-  font-size: 1.2rem; }
-  .directory > * {
-    margin: 10px; }
+  position: relative;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  background: rgba(0, 0, 0, 0.2); }
+  .directory .buttons {
+    position: absolute;
+    top: 0;
+    right: 5px; }
+    .directory .buttons button {
+      height: 20px;
+      width: 20px;
+      padding: 0 0 0 1px;
+      color: black;
+      background: transparent;
+      border: solid 2px black;
+      border-radius: 20rem;
+      font-size: 12px;
+      text-align: center;
+      line-height: 18px;
+      cursor: pointer;
+      transition: color 0.2s, background 0.2s; }
+      .directory .buttons button:hover, .directory .buttons button:focus, .directory .buttons button:active {
+        outline: none;
+        color: #c8c8c8;
+        background: black; }
+  .directory .row {
+    display: flex; }
+    .directory .row .item {
+      flex-grow: 1;
+      display: flex; }
+      .directory .row .item > * {
+        margin: 10px; }
   .directory input {
     padding: 0 5px;
     flex-grow: 1;
@@ -2341,20 +2369,3 @@
     border-bottom: solid 1px;
     outline: 0;
     font-size: 1.2rem; }
-  .directory button {
-    height: 30px;
-    width: 30px;
-    padding: 0;
-    color: black;
-    background: transparent;
-    border: solid 3px black;
-    border-radius: 20rem;
-    font-size: 20px;
-    text-align: center;
-    line-height: 26px;
-    cursor: pointer;
-    transition: color 0.2s, background 0.2s; }
-    .directory button:hover, .directory button:focus, .directory button:active {
-      outline: none;
-      color: #c8c8c8;
-      background: black; }

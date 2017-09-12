@@ -1,8 +1,15 @@
 $color-primary: rgba(200, 200, 200, 1);
 $color-secondary: rgba(0, 0, 0, 1);
+$color-shadow: rgba(0, 0, 0, .2);
 
 $time-transition-fast: .2s;
 $time-transition: 1s;
+
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
 @mixin button($color1, $color2) {
   button {
@@ -22,6 +29,8 @@ $time-transition: 1s;
 
     transition: color $time-transition-fast, background $time-transition-fast;
 
+    @include ellipsis();
+
     &:hover,
     &:focus,
     &:active {
@@ -32,11 +41,11 @@ $time-transition: 1s;
   }
 }
 
-@mixin icon($color1, $color2) {
+@mixin iconLarge($color1, $color2) {
   button {
     height: 30px;
     width: 30px;
-    padding: 0;
+    padding: 0 0 0 1px;
 
     color: $color1;
     background: transparent;
@@ -45,6 +54,32 @@ $time-transition: 1s;
     font-size: 20px;
     text-align: center;
     line-height: 26px;
+    cursor: pointer;
+    transition: color $time-transition-fast, background $time-transition-fast;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+      color: $color2;
+      background: $color1;
+    }
+  }
+}
+
+@mixin iconSmall($color1, $color2) {
+  button {
+    height: 20px;
+    width: 20px;
+    padding: 0 0 0 1px;
+
+    color: $color1;
+    background: transparent;
+    border: solid 2px $color1;
+    border-radius: 20rem;
+    font-size: 12px;
+    text-align: center;
+    line-height: 18px;
     cursor: pointer;
     transition: color $time-transition-fast, background $time-transition-fast;
 

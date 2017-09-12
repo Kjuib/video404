@@ -16,7 +16,10 @@
     padding-left: 15px;
     border-radius: 5px;
     cursor: pointer;
-    transition: color 0.2s, background 0.2s; }
+    transition: color 0.2s, background 0.2s;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
     .mainMenu button:hover, .mainMenu button:focus, .mainMenu button:active {
       outline: none;
       color: black;

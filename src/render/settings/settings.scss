@@ -31,7 +31,7 @@
     overflow-y: auto;
 
     .setDirectories {
-      @include icon($color-secondary, $color-primary);
+      @include iconLarge($color-secondary, $color-primary);
 
       button {
         position: absolute;
