@@ -36,10 +36,22 @@ customElements.define('v-main-menu', class extends HTMLElement {
             dirElement.remove();
         });
 
+        const dirClick = function(event) {
+            const directory = _.get(event, 'path[0].dataDirectory');
+            if (directory) {
+                electron.ipcRenderer.send(actions.getFiles, directory);
+            } else {
+                console.error('Unknown directory');
+                console.error('event', event);
+            }
+        };
+
         _.forEach(directories, (directory) => {
             const dirElement = document.createElement('button');
+            dirElement.dataDirectory = directory;
             dirElement.classList.add('dir');
             dirElement.innerHTML = directory.name;
+            dirElement.addEventListener('click', dirClick);
             this.menu.insertBefore(dirElement, this.btnSettings);
         });
     }
