@@ -37,9 +37,9 @@ customElements.define('v-main-menu', class extends HTMLElement {
         });
 
         const dirClick = function(event) {
-            const directory = _.get(event, 'path[0].dataDirectory');
-            if (directory) {
-                electron.ipcRenderer.send(actions.getFiles, directory);
+            const directoryInfo = _.get(event, 'path[0].dataDirectory');
+            if (directoryInfo) {
+                electron.ipcRenderer.send(actions.getFiles, directoryInfo);
             } else {
                 console.error('Unknown directory');
                 console.error('event', event);
@@ -48,7 +48,10 @@ customElements.define('v-main-menu', class extends HTMLElement {
 
         _.forEach(directories, (directory) => {
             const dirElement = document.createElement('button');
-            dirElement.dataDirectory = directory;
+            dirElement.dataDirectory = {
+                top: directory,
+                path: directory.path
+            };
             dirElement.classList.add('dir');
             dirElement.innerHTML = directory.name;
             dirElement.addEventListener('click', dirClick);

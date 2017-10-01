@@ -15,12 +15,10 @@ require('./mainMenu/mainMenu');
 require('./popup/popup');
 require('./settings/settings');
 require('./settings/directory/directory');
+require('./fileListing/fileListing');
 
 electron.ipcRenderer.on(actions.error, (event, message) => {
     console.error(message);
-});
-electron.ipcRenderer.on(actions.getFiles, (event, message) => {
-    console.log(message);
 });
 
 // electron.ipcRenderer.send(actions.getFiles, {
