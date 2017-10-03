@@ -34,6 +34,7 @@ customElements.define('v-settings', class extends HTMLElement {
         });
 
         this.directories = shadowRoot.querySelector('.setDirectories .directories');
+        this.playerCommandInput = shadowRoot.querySelector('.player #playerCommand');
 
         this.loadSettings();
     }
@@ -42,6 +43,7 @@ customElements.define('v-settings', class extends HTMLElement {
         this.settings.directories = _.map(this.directories.children, (directory) => {
             return directory.getValues();
         });
+        this.settings.playerCommand = this.playerCommandInput.value;
 
         return new Promise((resolve) => {
             const tempSettings = (event, message) => {
@@ -59,6 +61,8 @@ customElements.define('v-settings', class extends HTMLElement {
             this.settings = newSettings;
             return this.settings;
         }).then((settings) => {
+            this.playerCommandInput.value = this.settings.playerCommand || '';
+
             _.forEach(settings.directories, (directoryData) => {
                 const newDirectory = document.createElement('v-directory');
                 newDirectory.setValues(directoryData);

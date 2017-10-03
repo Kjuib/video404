@@ -30,6 +30,15 @@
     overflow-x: hidden;
     overflow-y: auto;
 
+    .item {
+      position: relative;
+      margin-bottom: 30px;
+
+      label {
+        display: block;
+      }
+    }
+
     .setDirectories {
       @include iconLarge($color-secondary, $color-primary);
 
@@ -41,6 +50,24 @@
 
       .directories {
         padding-left: 20px;
+      }
+    }
+
+    .player {
+      input {
+        width: 100%;
+        padding: 0 5px;
+
+        background: transparent;
+        border: 0;
+        border-bottom: solid 1px;
+        outline: 0;
+        font-size: 1.2rem;
+      }
+
+      .description {
+        margin-top: 10px;
+        font-size: .8rem;
       }
     }
   }

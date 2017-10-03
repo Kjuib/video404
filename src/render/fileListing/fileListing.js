@@ -4,16 +4,14 @@ const _ = require('lodash');
 const actions = require('../../shared/actions');
 
 const fileClick = function (event) {
-    console.log('event', event);
-
-
     const fileInfo = _.get(event, 'path[1].fileInfo') || _.get(event, 'path[0].fileInfo');
-    if (fileInfo) {
-        console.log('fileInfo', fileInfo);
-        electron.ipcRenderer.send(actions.getFiles, fileInfo);
-    } else {
+    if (!fileInfo) {
         console.error('Unknown directory');
         console.error('event', event);
+    } else if (fileInfo.isDirectory) {
+        electron.ipcRenderer.send(actions.getFiles, fileInfo);
+    } else {
+        electron.ipcRenderer.send(actions.playVideo, fileInfo);
     }
 };
 
@@ -42,7 +40,7 @@ customElements.define('v-file-listing', class extends HTMLElement {
             this.createButton({
                 top: filesData.top,
                 display: '..',
-                isDirectory: false,
+                isDirectory: true,
                 path: filesData.parentPath,
                 isGoingUp: true
             });
@@ -56,11 +54,11 @@ customElements.define('v-file-listing', class extends HTMLElement {
     }
 
     createButton(fileInfo) {
-        let icon = 'fa-play';
+        let icon = 'fa-star-o';
         if (fileInfo.isGoingUp) {
             icon = 'fa-reply';
         } else if (fileInfo.isDirectory) {
-            icon = 'fa-folder-open-o';
+            icon = 'fa-folder-open';
         }
 
         const goToParent = document.createElement('button');
