@@ -15,7 +15,7 @@ let service = require('./service/service');
 function createWindow () {
     // Create the browser window.
     // mainWindow = new BrowserWindow({width: 800, height: 600, frame: false, fullscreen: true});
-    mainWindow = new BrowserWindow({width: 1500, height: 750});
+    mainWindow = new BrowserWindow({width: 2000, height: 1250});
     service.setMainWindow(mainWindow);
 
     // and load the index.html of the app.
