@@ -2,8 +2,10 @@
   "name": "video404",
   "version": "1.0.0",
   "description": "Organize video files, play in your favorite player, resume, password protect",
+  "main": "src/main.js",
   "scripts": {
     "build": "npm run sass && electron ./src/main.js",
+    "prod": "npm run sass && electron-packager . --out=builds --platform=linux,win32 --arch=x64,armv7l --overwrite",
     "sass": "node-sass src/render/ -o src/render/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,10 +21,13 @@
   "homepage": "https://github.com/Kjuib/video404#readme",
   "dependencies": {
     "bluebird": "^3.5.0",
-    "electron": "^1.7.5",
+    "electron": "^1.7.8",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.4",
-    "moment": "^2.18.1",
-    "node-sass": "^4.5.3"
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "electron-packager": "^9.1.0"
   }
 }
